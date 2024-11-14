@@ -9,7 +9,7 @@ import { SideBarHeader } from './header';
 export function Sidebar({ children }: { children: React.ReactNode }) {
   return (
     <SidebarProvider>
-      <SideBarFrame>
+      <SideBarFrame className="shadow-[0_4px_4px_0px_rgba(0,0,0,0.3)]">
         <SidebarHeader className="p-0">
           <SideBarHeader />
         </SidebarHeader>

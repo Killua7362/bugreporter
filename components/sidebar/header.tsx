@@ -8,6 +8,7 @@ export function SideBarHeader() {
         icon={faBug}
         height={0}
         width={0}
+        className="border-[1px] border-black/30"
         style={{
           color: '#0466C8',
           minHeight: '30px',

@@ -5,14 +5,14 @@ import HeaderIcon from './header-icon';
 export default function Header(): JSX.Element {
   return (
     <div className="flex h-16 w-full gap-x-4">
-      <div className="flex h-full w-16 items-center justify-center rounded-md border border-white/30 bg-primary">
+      <div className="flex h-full w-16 items-center justify-center rounded-md border border-white/30 bg-primary shadow-[0_4px_4px_0px_rgba(0,0,0,0.3)]">
         <FontAwesomeIcon
           icon={faAlignJustify}
           className="h-fit min-h-5 w-fit min-w-5 bg-primary"
           style={{ color: 'hsl(210,59%,52%)' }}
         />
       </div>
-      <div className="flex h-full w-full items-center justify-end gap-x-8 rounded-md border border-white/30 bg-primary p-2.5">
+      <div className="flex h-full w-full items-center justify-end gap-x-8 rounded-md border border-white/30 bg-primary p-2.5 shadow-[0_4px_4px_0px_rgba(0,0,0,0.3)]">
         <HeaderIcon />
       </div>
     </div>
