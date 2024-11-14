@@ -33,6 +33,14 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --sidebar-background: #18181b;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
@@ -48,8 +56,10 @@
     --secondary-foreground: 60 9.1% 97.8%;
     --muted: 12 6.5% 15.1%;
     --muted-foreground: 24 5.4% 63.9%;
-    --accent: 12 6.5% 15.1%;
-    --accent-foreground: 60 9.1% 97.8%;
+    --accent: 210 59% 52%;
+    --accent-foreground: 0 0% 100%;
+    /* --accent: 12 6.5% 15.1%;
+    --accent-foreground: 60 9.1% 97.8%; */
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 60 9.1% 97.8%;
     --border: 12 6.5% 15.1%;
@@ -60,14 +70,26 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  /* Apply Noto Sans to the body/root element */
   body {
     @apply font-noto-sans;
+    font-weight: 400;
+    font-size: clamp(
+      0.875rem,
+      1rem,
+      1.25rem
+    ); /* responsive between 14px and 20px */
+    line-height: 1;
   }
-
-  /* Apply Albert Sans to all heading elements */
   h1,
   h2,
   h3,
@@ -75,6 +97,13 @@
   h5,
   h6 {
     @apply font-albert-sans;
+    font-weight: 800;
+    font-size: clamp(
+      1.25rem,
+      1.5rem,
+      1.875rem
+    ); /* responsive between 20px and 30px */
+    line-height: 1.1;
   }
 }
 

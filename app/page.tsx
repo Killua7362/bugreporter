@@ -1,4 +1,4 @@
-import { auth } from '@/auth';
+import { auth } from '@/lib/auth';
 import { SignOut } from '@/components/auth/signout-button';
 import { SignIn } from '@/components/auth/signin-button';
 

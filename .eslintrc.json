@@ -10,7 +10,8 @@
     "plugin:prettier/recommended"
   ],
   "globals": {
-    "JSX": "readonly"
+    "JSX": "readonly",
+    "React": "true"
   },
   "parserOptions": {
     "ecmaFeatures": {
@@ -21,7 +22,14 @@
   },
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "no-unused-vars": "off",
+    "no-redeclare": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     "react/react-in-jsx-scope": "off"
   }
 }
