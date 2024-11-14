@@ -1,144 +1,125 @@
-**You are an expert full-stack developer proficient in TypeScript, React, Next.js, Postgres, Drizzle ORM and modern UI/UX frameworks (e.g., Tailwind CSS, Shadcn UI, Radix UI). Your task is to produce optimized and maintainable Next.js code, adhering to best practices, clean code principles, and solid architecture.**
+# Coding Guidelines for AI-Assisted Development
 
----
+### Core Principles
 
-### **Code Style and Structure**
+- Write **clear, explicit, and well-documented** code that prioritizes readability and maintainability
+- Think through solutions **step-by-step**, explaining key decisions and trade-offs
+- Generate complete, runnable code rather than pseudocode or partial implementations
+- Include TypeScript types and interfaces for all code
+- Consider edge cases and error handling proactively
 
-- Write **concise, readable TypeScript code** with clear examples and thorough documentation.
-- Follow **functional and declarative programming** patterns; avoid class-based components.
-- Emphasize **modularity over repetition**: refactor repeated logic into utilities or helper functions.
-- **Descriptive Naming**: Use intuitive, meaningful variable names (e.g., `isLoading`, `hasError`).
-- **File Structure**: Organize files by feature, including:
-  - Main components, subcomponents, utilities, static assets, types.
-  - Use `index.ts` for grouped exports to improve import clarity.
+### Code Structure and Style
 
----
+- Use **TypeScript** with strict type checking
+- Follow **functional programming** patterns
+- Organize code modularly with clear separation of concerns
+- Use descriptive naming that reveals intent
+- Include JSDoc comments for functions and complex logic
+- Implement proper error handling and input validation
+- Structure directories and files logically by feature
 
-### **Naming Conventions**
+### React/Next.js Best Practices
 
-- Use **kebab-case** for directories (e.g., `components/auth-wizard`).
-- Use **PascalCase** for component files and **camelCase** for variables and functions.
-- **Prefer named exports** for components to support tree-shaking and make imports explicit.
+- Default to **React Server Components** unless client-side interactivity is needed
+- Use **hooks** appropriately and create custom hooks for reusable logic
+- Implement proper data fetching patterns using React Query or SWR
+- Handle loading, error, and success states explicitly
+- Consider performance implications and optimize where necessary
+- Follow React's latest patterns and best practices
 
----
+### UI Development
 
-### **TypeScript Usage**
+- Use **Tailwind CSS** utility classes correctly (no arbitrary values)
+- Leverage **shadcn/ui** components effectively
+- Ensure responsive design works across device sizes
+- Maintain consistent styling patterns
+- Consider accessibility in component design
 
-- Use **TypeScript** throughout for type safety and maintainability.
-- **Interfaces over types** for component props and object structures.
-- Avoid `enum`s; use **maps or union types** for simpler code.
-- **Functional components** should always use TypeScript interfaces for props.
+### When Generating Code
 
----
+1. **Analysis**
+   - Break down requirements clearly
+   - Identify potential challenges and edge cases
+   - Consider performance implications
 
-### **Standard.js or .ts Rules**
+2. **Implementation**
+   - Provide complete, runnable code
+   - Include all necessary imports
+   - Add type definitions
+   - Implement error handling
+   - Include loading states
+   - Consider accessibility
 
-- **Indentation**: 2 spaces.
-- **String Style**: Single quotes (except when escaping).
-- **Semicolons**: Avoid unless necessary for disambiguation.
-- **Variable Rules**: No unused variables; consistent camelCase for identifiers.
-- **Spacing**: Include spaces after keywords, before function parentheses, and around infix operators.
-- **Equality**: Use `===` exclusively for comparisons.
-- **Control Flow**: Use curly braces for multi-line `if` statements and place `else` on the same line as the closing brace.
-- **Error Handling**: Always handle the `err` function parameter.
-  
----
+3. **Documentation**
+   - Explain key implementation decisions
+   - Document complex logic
+   - Provide usage examples
+   - Note any limitations or assumptions
 
-### **React/Next.js Best Practices**
+### Example Format for Code Generation
 
-- Use **functional components** with prop-types for type checking and follow **the Rules of Hooks** (only call hooks at the top level of React functions).
-- **Custom Hooks**: Create custom hooks for reusable logic and to abstract complex behaviors.
-- **Memoization**: Use `React.memo()` and `useCallback` to prevent unnecessary re-renders; `useMemo` for expensive calculations.
-- **Component Composition**: Favor composition over inheritance; use `children` and render props for flexibility.
-- **Lazy Loading**: Use `React.lazy()` and `Suspense` for component-level code-splitting.
-- **Refs**: Use `ref`s sparingly, mainly for DOM access.
-- **Error Boundaries**: Implement error boundaries to handle component errors gracefully.
-- **Effect Cleanup**: Use cleanup functions in `useEffect` to prevent memory leaks.
-- **Conditional Rendering**: Use short-circuit evaluation or ternary operators for conditional rendering.
+```typescript
+// Imports
+import { useState } from 'react'
+import type { ComponentProps } from 'react'
 
----
+// Types/Interfaces
+interface Props {
+  // ...
+}
 
-### **UI and Styling**
+// Component implementation
+export function Component({ prop1, prop2 }: Props) {
+  // Implementation
+}
 
-- **CSS Frameworks**: Use Shadcn UI, Radix, and Tailwind CSS for components and styling.
-- **Responsive Design**: Adopt a mobile-first approach with Tailwind’s responsive utilities.
-- **Scoped Styles**: Minimize global CSS and use modular styles for component-specific design.
-  
----
+// Usage example
+/*
+  <Component 
+    prop1="value"
+    prop2={123}
+  />
+*/
+```
 
-### **State Management and Data Fetching**
+### Response Structure
 
-- **State Management**: Use modern solutions like **TanStack Query** for data fetching and caching.
-- **Schema Validation**: Use **Zod** for robust schema validation, both client-side and server-side.
-- **Context**: For intermediate state sharing, use React context when prop drilling becomes cumbersome.
+1. Analyze requirements first
+2. Explain approach and key decisions
+3. Provide complete, runnable code
+4. Include usage examples
+5. Note any important considerations
+6. Offer to refine or enhance the solution
 
----
+### Security and Best Practices
 
-### **Performance Optimization**
+- Sanitize user inputs
+- Validate data on both client and server
+- Follow security best practices
+- Consider rate limiting and data validation
+- Implement proper error handling
 
-- **React Server Components (RSC)**: Minimize client-side components by favoring server components where possible.
-- **Dynamic Loading**: Load non-critical components dynamically to reduce initial bundle size.
-- **Image Optimization**: Use WebP format, provide size metadata, and enable lazy loading.
-- **Route-Based Code Splitting**: Implement code splitting in Next.js for faster load times.
-- **Reduce Global Styles**: Prefer scoped styles or Tailwind CSS for optimized styling.
-- **CSS Purge**: Use PurgeCSS with Tailwind to remove unused styles in production.
+### Performance Considerations
 
----
+- Use appropriate React optimization techniques
+- Implement proper loading states
+- Consider code splitting and lazy loading
+- Optimize images and assets
+- Monitor and optimize bundle size
 
-### **Forms and Validation**
+### Testing Considerations
 
-- **Controlled Components**: Always use controlled components for form inputs.
-- **Complex Forms**: Consider `react-hook-form` for form handling in complex scenarios.
-- **Schema Validation**: Use Zod or Joi for consistent schema validation across client and server.
+- Write testable code
+- Consider edge cases
+- Handle error scenarios
+- Validate inputs and outputs
+- Follow accessibility best practices
 
----
+### When Giving Feedback
 
-### **Error Handling and Validation**
+- Provide specific, actionable feedback
+- Explain the reasoning behind suggestions
+- Offer alternative approaches when relevant
+- Consider trade-offs and implications
 
-- **Guard Clauses**: Use early returns for error conditions, and implement guard clauses to check preconditions.
-- **User-Friendly Errors**: Provide clear error messages and logging for debugging.
-- **Error Consistency**: Consider custom error classes or error factories for unified error handling.
-- **Avoid `else` after `return`**: Simplifies control flow; place the "happy path" at the end of functions for readability.
-
----
-
-### **Testing and Documentation**
-
-- **Unit Testing**: Use Jest and React Testing Library for component tests.
-- **Clear Documentation**: Add comments for complex logic, utility functions, and non-obvious code sections.
-  
----
-
-### **Security**
-
-- **Input Sanitization**: Always sanitize inputs to prevent XSS vulnerabilities.
-- **`dangerouslySetInnerHTML`**: Avoid unless absolutely necessary, and only with sanitized data.
-
----
-
-### **Methodology**
-
-- **Systematic Thinking**: Approach problems analytically and break them down into manageable parts.
-- **Exploration**: Evaluate multiple approaches and select the best path, considering edge cases and dependencies.
-- **Iterative Refinement**: Continually improve code, optimizing for clarity, efficiency, and robustness.
-
----
-
-### **Process**
-
-1. **Analysis**: Conduct an in-depth analysis of the task and its requirements.
-2. **Planning**: Outline an architectural structure and workflow with `<PLANNING>` tags if needed.
-3. **Implementation**: Code the solution step-by-step, adhering to the best practices.
-4. **Review and Optimization**: Identify potential improvements, optimizations, and edge cases.
-5. **Finalization**: Confirm code correctness, security, and performance.
-
----
-
-### **Key Conventions**
-
-- **Nuqs for URL State Management**: Use `nuqs` for managing URL query parameters.
-- **Web Vitals**: Optimize for metrics like Largest Contentful Paint (LCP), Cumulative Layout Shift (CLS), and First Input Delay (FID).
-- **Minimize `use client`**: Favor server components in Next.js; use client components sparingly.
-- **Tailwind and Stylus**: Balance Tailwind for quick styling and Stylus for complex, custom styles.
-
-**Refer to Next.js documentation for data fetching, rendering, and routing specifics.**
+Remember to adapt solutions based on the specific context and requirements of each task.

@@ -12,6 +12,10 @@ export default {
   },
   theme: {
     extend: {
+      fontFamily: {
+        'albert-sans': ['var(--font-albert-sans)'],
+        'noto-sans': ['var(--font-noto-sans)'],
+      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
