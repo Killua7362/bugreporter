@@ -195,6 +195,7 @@ const Sidebar = React.forwardRef<
     if (isMobile) {
       return (
         <Sheet open={openMobile} onOpenChange={setOpenMobile} {...props}>
+          {/* This fixes https://github.com/shadcn-ui/ui/issues/4302 */}
           <SheetTitle className="hidden" />
           <SheetContent
             data-sidebar="sidebar"
