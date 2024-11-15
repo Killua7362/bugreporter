@@ -14,10 +14,12 @@ export default function RootLayout({
   children: ReactNode;
 }>): JSX.Element {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <body
         className={`${notoSans.variable} ${albertSans.variable} antialiased`}
       >
+        {/* This is a hack to prevent FOUC in firefox */}
+        <script>0</script>
         {children}
       </body>
     </html>
